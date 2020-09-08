@@ -1,7 +1,7 @@
 package graphql
 
 import (
-	"github.com/dev-sota/echo-gorm-example/graphql/field"
+	"github.com/dev-sota/echo-gorm-graphql-example/graphql/field"
 	"github.com/graphql-go/graphql"
 	"github.com/jinzhu/gorm"
 )

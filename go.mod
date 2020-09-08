@@ -1,4 +1,4 @@
-module github.com/dev-sota/echo-gorm-example
+module github.com/dev-sota/echo-gorm-graphql-example
 
 go 1.15
 

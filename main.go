@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/dev-sota/echo-gorm-example/datastore"
-	"github.com/dev-sota/echo-gorm-example/graphql"
-	"github.com/dev-sota/echo-gorm-example/handlers"
+	"github.com/dev-sota/echo-gorm-graphql-example/datastore"
+	"github.com/dev-sota/echo-gorm-graphql-example/graphql"
+	"github.com/dev-sota/echo-gorm-graphql-example/handlers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -20,8 +20,8 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	// endpoint using gorm
 	e.GET("/users", handlers.GetUsers)
+
 	// endpoint using graphql
 	h, _ := graphql.NewHandler(db)
 	e.POST("/graphql", echo.WrapHandler(h))

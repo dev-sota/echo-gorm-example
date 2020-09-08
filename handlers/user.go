@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/dev-sota/echo-gorm-example/models"
+	"github.com/dev-sota/echo-gorm-graphql-example/models"
 	"github.com/labstack/echo/v4"
 )
 

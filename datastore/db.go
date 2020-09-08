@@ -14,7 +14,7 @@ func NewDB() *gorm.DB {
 		Passwd:               "",
 		Net:                  "tcp",
 		Addr:                 "127.0.0.1:3306",
-		DBName:               "echo_gorm_example_db",
+		DBName:               "echo_gorm_graphql_example_db",
 		AllowNativePasswords: true,
 		Params: map[string]string{
 			"parseTime": "true",
