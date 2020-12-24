@@ -1,7 +1,7 @@
 package field
 
 import (
-	"github.com/dev-sota/echo-gorm-graphql-example/models"
+	"github.com/dev-sota/echo-gorm-graphql-example/model"
 	"github.com/graphql-go/graphql"
 	"github.com/jinzhu/gorm"
 )
@@ -25,7 +25,7 @@ func NewUsers(db *gorm.DB) *graphql.Field {
 	return &graphql.Field{
 		Type: graphql.NewList(user),
 		Resolve: func(p graphql.ResolveParams) (i interface{}, e error) {
-			var u []*models.User
+			var u []*model.User
 			db.Find(&u)
 			return u, nil
 		},

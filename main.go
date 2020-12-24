@@ -5,7 +5,7 @@ import (
 
 	"github.com/dev-sota/echo-gorm-graphql-example/datastore"
 	"github.com/dev-sota/echo-gorm-graphql-example/graphql"
-	"github.com/dev-sota/echo-gorm-graphql-example/handlers"
+	"github.com/dev-sota/echo-gorm-graphql-example/handler"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -13,14 +13,14 @@ import (
 func main() {
 	db := datastore.NewDB()
 	defer db.Close()
-	handlers.SetDB(db)
+	handler.SetDB(db)
 
 	e := echo.New()
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.GET("/users", handlers.GetUsers)
+	e.GET("/users", handler.GetUsers)
 
 	// endpoint using graphql
 	h, _ := graphql.NewHandler(db)
